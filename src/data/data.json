@@ -1,0 +1,33 @@
+{
+    "code": 1,
+    "message": "success",
+    "data": [{
+        "name": "MySQL",
+        "time": "60天",
+        "cpu": "2核cpu",
+        "int": "4GB内存",
+        "status": "40G系统盘",
+        "number": "100G数据盘"
+    }, {
+        "name": "PostgreSQL",
+        "time": "60天",
+        "cpu": "2核cpu",
+        "int": "4GB内存",
+        "status": "40G系统盘",
+        "number": "100G数据盘"
+    }, {
+        "name": "SQL Server",
+        "time": "60天",
+        "cpu": "4核cpu",
+        "int": "8GB内存",
+        "status": "40G系统盘",
+        "number": "100G数据盘"
+    }, {
+        "name": "MongoDB",
+        "time": "60天",
+        "cpu": "2核cpu",
+        "int": "8GB内存",
+        "status": "40G系统盘",
+        "number": "100G数据盘"
+    }]
+}
