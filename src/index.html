@@ -16,8 +16,8 @@
             <h5>安全可靠的数据库服务</h5>
         </header>
         <section>
-            <ul>
-                <li>
+            <ul class="box">
+                <!-- <li>
                     <h3>
                         <p>
                             <input type="radio">MySQL
@@ -31,55 +31,14 @@
                         <span>100G数据盘</span>
                     </div>
                 </li>
-                <li>
-                    <h3>
-                        <p>
-                            <input type="radio">MySQL
-                        </p>
-                        <p>60天</p>
-                    </h3>
-                    <div class="sectionBottom">
-                        <span>2核cpu</span>
-                        <span>4GB内存</span>
-                        <span>40G系统盘</span>
-                        <span>100G数据盘</span>
-                    </div>
-                </li>
-                <li>
-                    <h3>
-                        <p>
-                            <input type="radio">MySQL
-                        </p>
-                        <p>60天</p>
-                    </h3>
-                    <div class="sectionBottom">
-                        <span>2核cpu</span>
-                        <span>4GB内存</span>
-                        <span>40G系统盘</span>
-                        <span>100G数据盘</span>
-                    </div>
-                </li>
-                <li>
-                    <h3>
-                        <p>
-                            <input type="radio">MySQL
-                        </p>
-                        <p>60天</p>
-                    </h3>
-                    <div class="sectionBottom">
-                        <span>2核cpu</span>
-                        <span>4GB内存</span>
-                        <span>40G系统盘</span>
-                        <span>100G数据盘</span>
-                    </div>
-                </li>
+                 -->
             </ul>
         </section>
         <footer>
             <div>
                 <h3>MySQL</h3>
                 <h4>
-                    <b>免费试用</b>60天
+                    <b id="res">免费试用</b>60天
                 </h4>
                 <h5>原价：￥1020.00</h5>
             </div>
@@ -88,6 +47,41 @@
     </div>
     <script src="js/jquery-2.1.1.min.js"></script>
     <script>
+        $.ajax({
+            url: "data/data.json",
+            success: function(res) {
+                if (res.code === 1) {
+                    render(res.data);
+                }
+            }
+        })
+
+        function render(data) {
+            console.log(data);
+            var str = "";
+            data.forEach(function(file) {
+                str += `<li>
+                        <h3>
+                            <p>
+                                <input type="radio" id="ipt">${file.name}
+                            </p>
+                            <p class="reds">${file.time}</p>
+                        </h3>
+                        <div class="sectionBottom">
+                            <span>${file.cpu}</span>
+                            <span>${file.int}</span>
+                            <span>${file.status}</span>
+                            <span>${file.number}</span>
+                        </div>
+                    </li>`
+            })
+            $(".box").append(str);
+        }
+        $(".box").find("li").eq(0).addClass("active");
+        $(".box").on("click", "li", function() {
+            $(this).addClass("active").siblings().removeClass("active");
+            $(this).find("input").prop("checked", true);
+        })
     </script>
 </body>
 

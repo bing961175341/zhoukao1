@@ -17,7 +17,7 @@
         "number": "100G数据盘"
     }, {
         "name": "SQL Server",
-        "time": "60天",
+        "time": "30天",
         "cpu": "4核cpu",
         "int": "8GB内存",
         "status": "40G系统盘",
